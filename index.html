@@ -182,50 +182,58 @@
       </div>
  </section>
 
- <!-- CONTACTO -->
- <section id="contact">
-      <div class="container">
-           <div class="row">
-                <div class="col-md-6 col-sm-12">
-                     <div id="google-map">
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3901.7196532238154!2d-77.0422!3d-12.0628!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8c2884afc2b%3A0xd0efb62b129bd1b8!2sCervantes%20189%2C%20Lima%2015046!5e0!3m2!1ses!2spe!4v1791954781726!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>                     </div>
-                </div>    
+<!-- CONTACTO -->
+<section id="contact">
+     <div class="container">
+          <div class="row">
+               <div class="col-md-6 col-sm-12">
+                    <div id="google-map" style="width: 100%; overflow: hidden; margin-bottom: 30px;">
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3901.7196532238154!2d-77.0422!3d-12.0628!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8c2884afc2b%3A0xd0efb62b129bd1b8!2sCervantes%20189%2C%20Lima%2015046!5e0!3m2!1ses!2spe!4v1791954781726!5m2!1ses!2spe" 
+                                 width="100%" 
+                                 height="450" 
+                                 style="border:0; width: 100%;" 
+                                 allowfullscreen="" 
+                                 loading="lazy" 
+                                 referrerpolicy="strict-origin-when-cross-origin">
+                         </iframe>
+                    </div>
+               </div>    
 
-                <div class="col-md-6 col-sm-12">
-                     <div class="section-title">
-                          <h2>Solicitar Cotización</h2>
-                     </div>
+               <div class="col-md-6 col-sm-12">
+                    <div class="section-title">
+                         <h2>Solicitar Cotización</h2>
+                    </div>
 
-                     <form action="#" method="post" id="contact-form">
-                          <div class="col-md-6 col-sm-6">
-                               <input type="text" class="form-control" name="name" placeholder="Razón Social" required>
-                          </div>
-                          <div class="col-md-6 col-sm-6">
-                               <input type="text" class="form-control" name="RUC" placeholder="RUC">
-                          </div>
-                          <div class="col-md-6 col-sm-6">
-                               <select class="form-control" name="producto" required>
-                                    <option value="">-- Servicio de Interés --</option>
-                                    <option value="linea_grafica">Línea Gráfica</option>
-                                    <option value="gigantografia">Gigantografías</option>
-                                    <option value="banners">Banners / Roll Screen</option>
-                                    <option value="caja_luminica">Caja Lumínica</option>
-                                    <option value="personalizado">Personalizados</option>
-                               </select>
-                          </div>
-                          <div class="col-md-6 col-sm-6">
-                               <input type="tel" class="form-control" name="telefono" placeholder="Teléfono" required>
-                          </div>
-                          <div class="col-md-12 col-sm-12">
-                               <input type="email" class="form-control" name="email" placeholder="Correo electrónico" required>
-                               <textarea class="form-control" rows="4" name="message" placeholder="Detalles de tu proyecto o requerimiento"></textarea>
-                               <button type="submit" class="form-control" id="cf-submit">Enviar Requerimiento</button>
-                          </div>
-                     </form>
-                </div>
-           </div>
-      </div>
- </section>          
+                    <form action="#" method="post" id="contact-form">
+                         <div class="col-md-6 col-sm-6">
+                              <input type="text" class="form-control" name="name" placeholder="Razón Social" required>
+                         </div>
+                         <div class="col-md-6 col-sm-6">
+                              <input type="text" class="form-control" name="RUC" placeholder="RUC">
+                         </div>
+                         <div class="col-md-6 col-sm-6">
+                              <select class="form-control" name="producto" required>
+                                   <option value="">-- Servicio de Interés --</option>
+                                   <option value="linea_grafica">Línea Gráfica</option>
+                                   <option value="gigantografia">Gigantografías</option>
+                                   <option value="banners">Banners / Roll Screen</option>
+                                   <option value="caja_luminica">Caja Lumínica</option>
+                                   <option value="personalizado">Personalizados</option>
+                              </select>
+                         </div>
+                         <div class="col-md-6 col-sm-6">
+                              <input type="tel" class="form-control" name="telefono" placeholder="Teléfono" required>
+                         </div>
+                         <div class="col-md-12 col-sm-12">
+                              <input type="email" class="form-control" name="email" placeholder="Correo electrónico" required>
+                              <textarea class="form-control" rows="4" name="message" placeholder="Detalles de tu proyecto o requerimiento"></textarea>
+                              <button type="submit" class="form-control" id="cf-submit">Enviar Requerimiento</button>
+                         </div>
+                    </form>
+               </div>
+          </div>
+     </div>
+</section>       
 
  <!-- FOOTER -->
  <footer id="footer">
