@@ -1,16 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
+/* =========================================
+   SISTEMA DE VARIABLES (CORPORATIVO / NOCHE)
+   ========================================= */
+:root {
+  --bg-body: #FFFFFF;
+  --bg-section: #FFFFFF;
+  --bg-service: #FFFFFF;
+  --bg-navbar: #1A2B4C;
+  --bg-footer: #1A2B4C;
+  --text-primary: #1A2B4C;
+  --text-body: #545454;
+  --text-footer: #E2E8F0;
+  --border-color: #E2E8F0;
+  --accent-color: #FF6B4A;
+  --accent-hover: #E05536;
+  --card-shadow: rgba(0,0,0,0.08);
+}
+
+/* Modo Noche (Activado con la clase .night-mode en el body) */
+body.night-mode {
+  --bg-body: #0b0f19;
+  --bg-section: #0f172a;
+  --bg-service: #1e293b;
+  --bg-navbar: #050508;
+  --bg-footer: #050508;
+  --text-primary: #f8fafc;
+  --text-body: #94a3b8;
+  --text-footer: #94a3b8;
+  --border-color: #334155;
+  --accent-color: #3b82f6; /* Azul corporativo oscuro de noche */
+  --accent-hover: #2563eb;
+  --card-shadow: rgba(0,0,0,0.4);
+}
+
 /* GLOBAL */
 body {
-  background: #FFFFFF;
+  background: var(--bg-body);
   font-family: 'Montserrat', sans-serif;
-  color: #2D3748;
+  color: var(--text-body);
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  color: #1A2B4C;
+  color: var(--text-primary);
 }
 
 h1 {
@@ -24,23 +59,25 @@ h2 {
 }
 
 p {
-  color: #545454;
+  color: var(--text-body);
   font-size: 15px;
   line-height: 1.7;
 }
 
 a {
-  color: #FF6B4A;
+  color: var(--accent-color);
   transition: all 0.3s ease;
   text-decoration: none !important;
 }
 
 a:hover {
-  color: #1A2B4C;
+  color: var(--text-primary);
 }
 
 section {
   padding: 80px 0;
+  background: var(--bg-section);
+  transition: background 0.3s ease;
 }
 
 .section-title {
@@ -48,7 +85,7 @@ section {
 }
 
 .section-title h4 {
-  color: #FF6B4A;
+  color: var(--accent-color);
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -57,10 +94,11 @@ section {
 
 /* NAVBAR */
 .custom-navbar {
-  background: #1A2B4C !important;
+  background: var(--bg-navbar) !important;
   border: none;
   padding: 15px 0;
   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  transition: background 0.3s ease;
 }
 
 .custom-navbar .navbar-brand {
@@ -71,7 +109,7 @@ section {
 }
 
 .custom-navbar .navbar-brand span {
-  color: #FF6B4A;
+  color: var(--accent-color);
 }
 
 .custom-navbar .nav li a {
@@ -83,13 +121,13 @@ section {
 
 .custom-navbar .nav li a:hover,
 .custom-navbar .nav li.active a {
-  color: #FF6B4A !important;
+  color: var(--accent-color) !important;
   background: transparent !important;
 }
 
 /* BUTTONS */
 .section-btn {
-  background: #FF6B4A;
+  background: var(--accent-color);
   color: #FFFFFF !important;
   border-radius: 4px;
   border: none;
@@ -100,7 +138,7 @@ section {
 }
 
 .section-btn:hover {
-  background: #E05536;
+  background: var(--accent-hover);
 }
 
 /* SLIDER / HERO */
@@ -127,7 +165,7 @@ section {
 }
 
 .slider .caption h3 {
-  color: #FF6B4A;
+  color: var(--accent-color);
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -145,27 +183,28 @@ section {
 
 /* SERVICIOS / PRODUCTOS */
 #menu {
-  background: #F8F9FA;
+  background: var(--bg-body);
 }
 
 .service-card {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  background: var(--bg-service);
+  border: 1px solid var(--border-color);
   border-radius: 6px;
   padding: 30px;
   margin-bottom: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-  border-color: #FF6B4A;
+  box-shadow: 0 10px 20px var(--card-shadow);
+  border-color: var(--accent-color);
 }
 
 .service-card h3 {
   font-size: 1.3em;
   margin-bottom: 12px;
+  color: var(--text-primary);
 }
 
 /* STAFF */
@@ -202,22 +241,32 @@ section {
 .team-info h3 {
   font-size: 1.2em;
   margin-bottom: 5px;
+  color: var(--text-primary);
 }
 
 .team-info p {
   font-size: 13px;
-  color: #FF6B4A;
+  color: var(--accent-color);
   font-weight: 600;
 }
 
 /* CONTACTO */
+#contact {
+  background: var(--bg-section);
+}
+
 #contact .form-control {
-  background: #F8F9FA;
-  border: 1px solid #E2E8F0;
+  background: var(--bg-service);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   height: 48px;
   margin-bottom: 15px;
   box-shadow: none;
+  color: var(--text-primary);
+}
+
+#contact .form-control::placeholder {
+  color: var(--text-body);
 }
 
 #contact textarea.form-control {
@@ -225,11 +274,11 @@ section {
 }
 
 #contact .form-control:focus {
-  border-color: #1A2B4C;
+  border-color: var(--accent-color);
 }
 
 #contact button#cf-submit {
-  background: #FF6B4A;
+  background: var(--accent-color);
   color: #FFFFFF;
   font-weight: 700;
   border: none;
@@ -237,14 +286,15 @@ section {
 }
 
 #contact button#cf-submit:hover {
-  background: #1A2B4C;
+  background: var(--accent-hover);
 }
 
 /* FOOTER */
 footer {
-  background: #1A2B4C;
+  background: var(--bg-footer);
   color: #FFFFFF;
   padding: 50px 0;
+  transition: background 0.3s ease;
 }
 
 footer h2 {
@@ -254,9 +304,34 @@ footer h2 {
 }
 
 footer p {
-  color: #E2E8F0;
+  color: var(--text-footer);
   font-size: 14px;
 }
+
+/* LOGOTIPO JUNTO AL NOMBRE (MÁS GRANDE Y PEGADO) */
+.navbar-brand {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0px !important; /* Totalmente pegado */
+}
+
+.brand-logo {
+    height: 56px !important; /* Más grande */
+    width: auto !important;
+    max-width: 80px !important;
+    object-fit: contain !important;
+    vertical-align: middle !important;
+    margin-right: -4px !important; /* Ajuste milimétrico para acercarlo a la letra */
+    flex-shrink: 0 !important;
+}
+
+@media (max-width: 767px) {
+    .brand-logo {
+         height: 40px !important;
+         max-width: 60px !important;
+    }
+}
+
 /* BOTÓN FLOTANTE DE WHATSAPP */
 .whatsapp-float {
     position: fixed;
@@ -285,4 +360,30 @@ footer p {
 
 .whatsapp-icon {
     margin-top: 0;
+}
+
+/* BOTÓN FLOTANTE CAMBIADOR DE TEMA (THEME SWITCHER) */
+.theme-toggle-btn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 95px;
+    right: 30px;
+    background-color: var(--bg-service);
+    color: var(--text-primary);
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
 }

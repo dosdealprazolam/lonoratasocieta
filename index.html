@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+     <!-- FAVICON -->
+     <link rel="icon" type="image/png" href="logo.png">
+     <link rel="shortcut icon" href="logo.png" type="image/png">
+     
      <title>Lonorata Società | Estudio de Diseño Gráfico</title>
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -18,15 +22,20 @@
 </head>
 <body>
 
- <!-- PRE LOADER -->
- <section class="preloader">
+<!-- BOTÓN FLOTANTE CAMBIADOR DE TEMA (CORPORATIVO / NOCHE) -->
+<button class="theme-toggle-btn" id="themeToggle" title="Cambiar Tema (Modo Noche / Corporativo)">
+     <i class="fa fa-moon-o" id="themeIcon"></i>
+</button>
+
+<!-- PRE LOADER -->
+<section class="preloader">
       <div class="spinner">
            <span class="spinner-rotate"></span>
       </div>
- </section>
+</section>
 
- <!-- MENU -->
- <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+<!-- MENU -->
+<section class="navbar custom-navbar navbar-fixed-top" role="navigation">
       <div class="container">
            <div class="navbar-header">
                 <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -34,7 +43,12 @@
                      <span class="icon icon-bar"></span>
                      <span class="icon icon-bar"></span>
                 </button>
-                <a href="index.html" class="navbar-brand">LONORATA <span>SOCIETÀ</span></a>
+
+                <!-- LOGOTIPO AUMENTADO Y PEGADO A LAS LETRAS -->
+                <a href="index.html" class="navbar-brand">
+                    <img src="logo.png" alt="Logo Lonorata" class="brand-logo">
+                    LONORATA <span>SOCIETÀ</span>
+                </a>
            </div>
 
            <div class="collapse navbar-collapse">
@@ -51,10 +65,10 @@
                 </ul>
            </div>
       </div>
- </section>
+</section>
 
- <!-- HOME SLIDER -->
- <section id="home" class="slider">
+<!-- HOME SLIDER -->
+<section id="home" class="slider">
       <div class="row">
            <div class="owl-carousel owl-theme">
                 
@@ -99,10 +113,10 @@
 
            </div>
       </div>
- </section>
+</section>
 
- <!-- ABOUT -->
- <section id="about">
+<!-- ABOUT -->
+<section id="about">
       <div class="container">
            <div class="row">
                 <div class="col-md-6 col-sm-12">
@@ -119,15 +133,15 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                      <div class="about-image">
-                          <img src="images/about-image.jpg" class="img-responsive" alt="Nosotros">
+                          <img src="images/about-image.png" class="img-responsive" alt="Nosotros">
                      </div>
                 </div>
            </div>
       </div>
- </section>
+</section>
 
- <!-- SERVICIOS -->
- <section id="menu">
+<!-- SERVICIOS -->
+<section id="menu">
       <div class="container">
            <div class="row">
                 <div class="col-md-12 col-sm-12">
@@ -180,7 +194,7 @@
                 </div>
            </div>
       </div>
- </section>
+</section>
 
 <!-- CONTACTO -->
 <section id="contact">
@@ -189,12 +203,12 @@
                <div class="col-md-6 col-sm-12">
                     <div id="google-map" style="width: 100%; overflow: hidden; margin-bottom: 30px;">
                          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3901.7196532238154!2d-77.0422!3d-12.0628!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8c2884afc2b%3A0xd0efb62b129bd1b8!2sCervantes%20189%2C%20Lima%2015046!5e0!3m2!1ses!2spe!4v1791954781726!5m2!1ses!2spe" 
-                                 width="100%" 
-                                 height="450" 
-                                 style="border:0; width: 100%;" 
-                                 allowfullscreen="" 
-                                 loading="lazy" 
-                                 referrerpolicy="strict-origin-when-cross-origin">
+                              width="100%" 
+                              height="450" 
+                              style="border:0; width: 100%;" 
+                              allowfullscreen="" 
+                              loading="lazy" 
+                              referrerpolicy="strict-origin-when-cross-origin">
                          </iframe>
                     </div>
                </div>    
@@ -233,10 +247,10 @@
                </div>
           </div>
      </div>
-</section>       
+</section>     
 
- <!-- FOOTER -->
- <footer id="footer">
+<!-- FOOTER -->
+<footer id="footer">
       <div class="container">
            <div class="row">
                 <div class="col-md-4 col-sm-6">
@@ -244,7 +258,6 @@
                           <h2>Ubicación</h2>
                           <p>Lima, Centro Historico</p>
                           <p>calle Cervantes 189, Oficina 201</p>
-
                           <p>Tel: +51 982 212 167</p>
                      </div>
                 </div>
@@ -265,19 +278,36 @@
                 </div>
            </div>
       </div>
- </footer>
+</footer>
 
- <!-- SCRIPTS -->
- <script src="js/jquery.js"></script>
- <script src="js/bootstrap.min.js"></script>
- <script src="js/jquery.stellar.min.js"></script>
- <script src="js/wow.min.js"></script>
- <script src="js/owl.carousel.min.js"></script>
- <script src="js/jquery.magnific-popup.min.js"></script>
- <script src="js/smoothscroll.js"></script>
- <script src="js/custom.js"></script>
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/custom.js"></script>
 
- <!-- BOTÓN FLOTANTE WHATSAPP -->
+<!-- SCRIPT PARA EL CAMBIADOR DE TEMA (CORPORATIVO / NOCHE) -->
+<script>
+    const themeBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const body = document.body;
+
+    themeBtn.addEventListener('click', () => {
+        body.classList.toggle('night-mode');
+        
+        if (body.classList.contains('night-mode')) {
+            themeIcon.className = 'fa fa-sun-o'; // Cambia a sol cuando está en noche
+        } else {
+            themeIcon.className = 'fa fa-moon-o'; // Cambia a luna cuando está en corporativo
+        }
+    });
+</script>
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
 <a href="https://wa.me/51982212167?text=Hola%20Lonorata%20Societ%C3%A0,%20deseo%20m%C3%A1s%20informaci%C3%B3n" 
    class="whatsapp-float" 
    target="_blank" 
