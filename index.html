@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="night-mode">
 <head>
      <!-- FAVICON -->
      <link rel="icon" type="image/png" href="logo.png">
@@ -22,9 +22,9 @@
 </head>
 <body>
 
-<!-- BOTÓN FLOTANTE CAMBIADOR DE TEMA (CORPORATIVO / NOCHE) -->
-<button class="theme-toggle-btn" id="themeToggle" title="Cambiar Tema (Modo Noche / Corporativo)">
-     <i class="fa fa-moon-o" id="themeIcon"></i>
+<!-- BOTÓN FLOTANTE CAMBIADOR DE TEMA (POR DEFECTO INICIA EN MODO OSCURO, MUESTRA SOL PARA CAMBIAR A CLARO) -->
+<button class="theme-toggle-btn" id="themeToggle" title="Cambiar Tema (Modo Claro / Noche)">
+     <i class="fa fa-sun-o" id="themeIcon"></i>
 </button>
 
 <!-- PRE LOADER -->
@@ -290,25 +290,25 @@
 <script src="js/smoothscroll.js"></script>
 <script src="js/custom.js"></script>
 
-<!-- SCRIPT PARA EL CAMBIADOR DE TEMA (CORPORATIVO / NOCHE) -->
+<!-- SCRIPT PARA EL CAMBIADOR DE TEMA (INVIERTE EL ESTADO OSCURO A CLARO) -->
 <script>
     const themeBtn = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    const body = document.body;
+    const htmlTag = document.documentElement; // Usamos la etiqueta html
 
     themeBtn.addEventListener('click', () => {
-        body.classList.toggle('night-mode');
+        htmlTag.classList.toggle('night-mode');
         
-        if (body.classList.contains('night-mode')) {
-            themeIcon.className = 'fa fa-sun-o'; // Cambia a sol cuando está en noche
+        if (htmlTag.classList.contains('night-mode')) {
+            themeIcon.className = 'fa fa-sun-o'; // Muestra sol si está en noche (para cambiar a día)
         } else {
-            themeIcon.className = 'fa fa-moon-o'; // Cambia a luna cuando está en corporativo
+            themeIcon.className = 'fa fa-moon-o'; // Muestra luna si está en día (para cambiar a noche)
         }
     });
 </script>
 
 <!-- BOTÓN FLOTANTE WHATSAPP -->
-<a href="https://wa.me/51982212167?text=Hola%20Lonorata%20Societ%C3%A0,%20deseo%20m%C3%A1s%20informaci%C3%B3n" 
+<a href="https://wa.me/51982212167?text=Hola%20Lonorata%20Societ%C3%A0,%20deseo%20m%C3%A1s%20informaci%C3%3N" 
    class="whatsapp-float" 
    target="_blank" 
    rel="noopener noreferrer"

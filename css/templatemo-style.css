@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 /* =========================================
-   SISTEMA DE VARIABLES (CORPORATIVO / NOCHE)
+   SISTEMA DE VARIABLES (TEMA CLARO POR DEFECTO / MODO NOCHE)
    ========================================= */
 :root {
   --bg-body: #FFFFFF;
@@ -18,8 +18,8 @@
   --card-shadow: rgba(0,0,0,0.08);
 }
 
-/* Modo Noche (Activado con la clase .night-mode en el body) */
-body.night-mode {
+/* Modo Noche (Activado por defecto mediante la clase .night-mode en la etiqueta html) */
+html.night-mode {
   --bg-body: #0b0f19;
   --bg-section: #0f172a;
   --bg-service: #1e293b;
@@ -29,7 +29,7 @@ body.night-mode {
   --text-body: #94a3b8;
   --text-footer: #94a3b8;
   --border-color: #334155;
-  --accent-color: #3b82f6; /* Azul corporativo oscuro de noche */
+  --accent-color: #3b82f6;
   --accent-hover: #2563eb;
   --card-shadow: rgba(0,0,0,0.4);
 }
@@ -312,16 +312,16 @@ footer p {
 .navbar-brand {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 0px !important; /* Totalmente pegado */
+    gap: 0px !important;
 }
 
 .brand-logo {
-    height: 56px !important; /* Más grande */
+    height: 56px !important;
     width: auto !important;
     max-width: 80px !important;
     object-fit: contain !important;
     vertical-align: middle !important;
-    margin-right: -4px !important; /* Ajuste milimétrico para acercarlo a la letra */
+    margin-right: -4px !important;
     flex-shrink: 0 !important;
 }
 
@@ -362,7 +362,7 @@ footer p {
     margin-top: 0;
 }
 
-/* BOTÓN FLOTANTE CAMBIADOR DE TEMA (THEME SWITCHER) */
+/* BOTÓN FLOTANTE CAMBIADOR DE TEMA */
 .theme-toggle-btn {
     position: fixed;
     width: 50px;
