@@ -5,7 +5,7 @@
      <link rel="icon" type="image/png" href="logo.png">
      <link rel="shortcut icon" href="logo.png" type="image/png">
      
-     <title>Lonorata Società | 30 Años de experiencia en Diseño Gráfico</title>
+     <title>Lonorata Società | Estudio de Diseño Gráfico</title>
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -19,10 +19,118 @@
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/templatemo-style.css">
+
+     <!-- ESTILOS CORREGIDOS -->
+     <style>
+          .navbar-header .navbar-brand {
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+          }
+          .navbar-header .navbar-brand .brand-logo {
+              display: inline-block;
+              height: 38px;
+              width: auto;
+              max-width: 55px;
+              object-fit: contain;
+              vertical-align: middle;
+              flex-shrink: 0;
+          }
+          @media (max-width: 767px) {
+              .navbar-header .navbar-brand .brand-logo {
+                   height: 32px;
+                   max-width: 45px;
+              }
+          }
+
+          /* BOTÓN FLOTANTE WHATSAPP (ESQUINA DERECHA) */
+          .whatsapp-float {
+              position: fixed;
+              width: 55px;
+              height: 55px;
+              bottom: 25px;
+              right: 25px;
+              background-color: #25d366;
+              color: #FFF !important;
+              border-radius: 50px;
+              text-align: center;
+              font-size: 30px;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+              z-index: 9999;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 0.3s ease;
+          }
+          .whatsapp-float:hover {
+              background-color: #128c7e;
+              transform: scale(1.1);
+              color: #FFF !important;
+          }
+
+          /* BOTÓN SUBIR CENTRADO (ESTILO APP / AL MEDIO ABAJO) */
+          .scroll-top-btn {
+              position: fixed;
+              width: 48px;
+              height: 48px;
+              bottom: 25px;
+              left: 50%;
+              transform: translateX(-50%);
+              background-color: var(--accent-color, #FF6B4A);
+              color: #FFF !important;
+              border-radius: 50px;
+              text-align: center;
+              font-size: 22px;
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+              z-index: 9998;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 0.3s ease;
+              opacity: 0;
+              visibility: hidden;
+              cursor: pointer;
+              border: none;
+              text-decoration: none;
+          }
+          .scroll-top-btn.show {
+              opacity: 1;
+              visibility: visible;
+          }
+          .scroll-top-btn:hover {
+              transform: translateX(-50%) scale(1.1);
+              background-color: var(--accent-hover, #E05536);
+          }
+
+          /* BOTÓN CAMBIO DE TEMA */
+          .theme-toggle-btn {
+              position: fixed;
+              width: 45px;
+              height: 45px;
+              bottom: 90px;
+              right: 25px;
+              background-color: var(--bg-service, #1e293b);
+              color: var(--text-primary, #fff);
+              border-radius: 50%;
+              border: 2px solid var(--border-color, #334155);
+              text-align: center;
+              font-size: 18px;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+              z-index: 9998;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              transition: transform 0.3s ease;
+          }
+          .theme-toggle-btn:hover {
+              transform: scale(1.1);
+          }
+     </style>
 </head>
 <body>
 
-<!-- BOTÓN FLOTANTE CAMBIADOR DE TEMA (POR DEFECTO INICIA EN MODO OSCURO, MUESTRA SOL PARA CAMBIAR A CLARO) -->
+<!-- BOTÓN MODO OSCURO / CLARO -->
 <button class="theme-toggle-btn" id="themeToggle" title="Cambiar Tema (Modo Claro / Noche)">
      <i class="fa fa-sun-o" id="themeIcon"></i>
 </button>
@@ -44,7 +152,7 @@
                      <span class="icon icon-bar"></span>
                 </button>
 
-                <!-- LOGOTIPO AUMENTADO Y PEGADO A LAS LETRAS -->
+                <!-- LOGOTIPO Y NOMBRE -->
                 <a href="index.html" class="navbar-brand">
                     <img src="logo.png" alt="Logo Lonorata" class="brand-logo">
                     LONORATA <span>SOCIETÀ</span>
@@ -53,15 +161,13 @@
 
            <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-nav-first">
-                     <li><a href="#home" class="smoothScroll">Inicio</a></li>
-                     <li><a href="#about" class="smoothScroll">Nosotros</a></li>
                      <li><a href="#menu" class="smoothScroll">Servicios</a></li>
                      <li><a href="#contact" class="smoothScroll">Contacto</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
                      <li><a href="tel:+51 982212167"><i class="fa fa-phone"></i>+51 982 212 167</a></li>
-                     <a href="https://wa.me/51982212167?text=Hola%20Lonorata%20Societ%C3%A0,%20deseo%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="section-btn">Cotiza ahora</a>
+                     <a href="#contact" class="section-btn smoothScroll">Cotiza ahora</a>
                 </ul>
            </div>
       </div>
@@ -79,7 +185,8 @@
                                     <h3>Diseño & Estrategia Visual</h3>
                                     <h1>LÍNEA GRÁFICA & BRANDING</h1>
                                     <p>Construimos la identidad visual de tu marca para destacar en el mercado.</p>
-                                    <a href="https://wa.me/51982212167?text=Hola%20Lonorata%20Societ%C3%A0,%20deseo%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="section-btn btn smoothScroll">COTIZA POR WHATSAPP</a>
+                                    <a href="https://wa.link/cdxb69" target="_blank" class="section-btn btn smoothScroll" style="margin-right: 10px;">COTIZA POR WHATSAPP</a>
+                                    <a href="#menu" class="section-btn btn smoothScroll" style="background: transparent; border: 2px solid #fff; color: #fff;">VER SERVICIOS</a>
                                </div>
                           </div>
                      </div>
@@ -92,7 +199,8 @@
                                     <h3>Publicidad Exterior</h3>
                                     <h1>GIGANTOGRAFÍAS & BANNERS</h1>
                                     <p>Impresión de alta resolución para eventos, fachadas y publicidad a gran escala.</p>
-                                    <a href="https://wa.me/51982212167?text=Hola%20Lonorata%20Societ%C3%A0,%20deseo%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="section-btn btn smoothScroll">COTIZA POR WHATSAPP</a>
+                                    <a href="https://wa.link/cdxb69" target="_blank" class="section-btn btn smoothScroll" style="margin-right: 10px;">COTIZA POR WHATSAPP</a>
+                                    <a href="#menu" class="section-btn btn smoothScroll" style="background: transparent; border: 2px solid #fff; color: #fff;">VER SERVICIOS</a>
                                </div>
                           </div>
                      </div>
@@ -105,7 +213,8 @@
                                     <h3>Soluciones Luminosas</h3>
                                     <h1>CAJAS LUMÍNICAS & LETREROS</h1>
                                     <p>Destaca la presencia de tu negocio de día y de noche con terminados de alta calidad.</p>
-                                    <a href="https://wa.me/51982212167?text=Hola%20Lonorata%20Societ%C3%A0,%20deseo%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="section-btn btn smoothScroll">COTIZA POR WHATSAPP</a>
+                                    <a href="https://wa.link/cdxb69" target="_blank" class="section-btn btn smoothScroll" style="margin-right: 10px;">COTIZA POR WHATSAPP</a>
+                                    <a href="#menu" class="section-btn btn smoothScroll" style="background: transparent; border: 2px solid #fff; color: #fff;">VER SERVICIOS</a>
                                </div>
                           </div>
                      </div>
@@ -203,12 +312,12 @@
                <div class="col-md-6 col-sm-12">
                     <div id="google-map" style="width: 100%; overflow: hidden; margin-bottom: 30px;">
                          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3901.7196532238154!2d-77.0422!3d-12.0628!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8c2884afc2b%3A0xd0efb62b129bd1b8!2sCervantes%20189%2C%20Lima%2015046!5e0!3m2!1ses!2spe!4v1791954781726!5m2!1ses!2spe" 
-                              width="100%" 
-                              height="450" 
-                              style="border:0; width: 100%;" 
-                              allowfullscreen="" 
-                              loading="lazy" 
-                              referrerpolicy="strict-origin-when-cross-origin">
+                                 width="100%" 
+                                 height="450" 
+                                 style="border:0; width: 100%;" 
+                                 allowfullscreen="" 
+                                 loading="lazy" 
+                                 referrerpolicy="strict-origin-when-cross-origin">
                          </iframe>
                     </div>
                </div>    
@@ -218,36 +327,36 @@
                          <h2>Solicitar Cotización</h2>
                     </div>
 
-                    <form action="#" method="post" id="contact-form">
+                    <form id="contact-form">
                          <div class="col-md-6 col-sm-6">
-                              <input type="text" class="form-control" name="name" placeholder="Razón Social" required>
+                              <input type="text" id="ws-name" class="form-control" name="name" placeholder="Razón Social" required>
                          </div>
                          <div class="col-md-6 col-sm-6">
-                              <input type="text" class="form-control" name="RUC/DNI" placeholder="RUC/DNI">
+                              <input type="text" id="ws-ruc" class="form-control" name="RUC" placeholder="RUC">
                          </div>
                          <div class="col-md-6 col-sm-6">
-                              <select class="form-control" name="producto" required>
+                              <select id="ws-producto" class="form-control" name="producto" required>
                                    <option value="">-- Servicio de Interés --</option>
-                                   <option value="linea_grafica">Línea Gráfica</option>
-                                   <option value="gigantografia">Gigantografías</option>
-                                   <option value="banners">Banners / Roll Screen</option>
-                                   <option value="caja_luminica">Caja Lumínica</option>
-                                   <option value="personalizado">Personalizados</option>
+                                   <option value="Línea Gráfica">Línea Gráfica</option>
+                                   <option value="Gigantografías">Gigantografías</option>
+                                   <option value="Banners / Roll Screen">Banners / Roll Screen</option>
+                                   <option value="Caja Lumínica">Caja Lumínica</option>
+                                   <option value="Personalizados">Personalizados</option>
                               </select>
                          </div>
                          <div class="col-md-6 col-sm-6">
-                              <input type="tel" class="form-control" name="telefono" placeholder="Teléfono" required>
+                              <input type="tel" id="ws-telefono" class="form-control" name="telefono" placeholder="Teléfono" required>
                          </div>
                          <div class="col-md-12 col-sm-12">
-                              <input type="email" class="form-control" name="email" placeholder="Correo electrónico" required>
-                              <textarea class="form-control" rows="4" name="message" placeholder="Detalles de tu proyecto o requerimiento"></textarea>
-                              <button type="submit" class="form-control" id="cf-submit">Enviar Requerimiento</button>
+                              <input type="email" id="ws-email" class="form-control" name="email" placeholder="Correo electrónico" required>
+                              <textarea id="ws-message" class="form-control" rows="4" name="message" placeholder="Detalles de tu proyecto o requerimiento"></textarea>
+                              <button type="submit" class="form-control" id="cf-submit">Enviar Requerimiento por WhatsApp</button>
                          </div>
                     </form>
                </div>
           </div>
      </div>
-</section>     
+</section>    
 
 <!-- FOOTER -->
 <footer id="footer">
@@ -280,6 +389,20 @@
       </div>
 </footer>
 
+<!-- BOTÓN FLOTANTE WHATSAPP (ESQUINA DERECHA) -->
+<a href="https://wa.me/51982212167?text=Hola%20Lonorata%20Societ%C3%A0,%20deseo%20m%C3%A1s%20informaci%C3%B3n" 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   aria-label="Contactar por WhatsApp">
+    <i class="fa fa-whatsapp whatsapp-icon"></i>
+</a>
+
+<!-- BOTÓN SUBIR AL MEDIO (ESTILO APP) -->
+<button id="scrollToTopBtn" class="scroll-top-btn" aria-label="Ir arriba">
+     <i class="fa fa-angle-up"></i>
+</button>
+
 <!-- SCRIPTS -->
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -290,31 +413,69 @@
 <script src="js/smoothscroll.js"></script>
 <script src="js/custom.js"></script>
 
-<!-- SCRIPT PARA EL CAMBIADOR DE TEMA (INVIERTE EL ESTADO OSCURO A CLARO) -->
+<!-- SCRIPT CAMBIADOR DE TEMA -->
 <script>
     const themeBtn = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    const htmlTag = document.documentElement; // Usamos la etiqueta html
+    const htmlTag = document.documentElement;
 
     themeBtn.addEventListener('click', () => {
         htmlTag.classList.toggle('night-mode');
         
         if (htmlTag.classList.contains('night-mode')) {
-            themeIcon.className = 'fa fa-sun-o'; // Muestra sol si está en noche (para cambiar a día)
+            themeIcon.className = 'fa fa-sun-o'; 
         } else {
-            themeIcon.className = 'fa fa-moon-o'; // Muestra luna si está en día (para cambiar a noche)
+            themeIcon.className = 'fa fa-moon-o'; 
         }
     });
 </script>
 
-<!-- BOTÓN FLOTANTE WHATSAPP -->
-<a href="https://wa.me/51982212167?text=Hola%20Lonorata%20Societ%C3%A0,%20deseo%20m%C3%A1s%20informaci%C3%3N" 
-   class="whatsapp-float" 
-   target="_blank" 
-   rel="noopener noreferrer"
-   aria-label="Contactar por WhatsApp">
-    <i class="fa fa-whatsapp whatsapp-icon"></i>
-</a>
+<!-- SCRIPT ACCIÓN DEL BOTÓN SUBIR Y FORMULARIO -->
+<script>
+// Manejo explícito en JavaScript para el scroll hacia arriba
+var topBtn = document.getElementById('scrollToTopBtn');
+
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+        topBtn.classList.add('show');
+    } else {
+        topBtn.classList.remove('show');
+    }
+});
+
+topBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Envío a WhatsApp
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var name = document.getElementById('ws-name').value;
+    var ruc = document.getElementById('ws-ruc').value || 'No especificado';
+    var producto = document.getElementById('ws-producto').value;
+    var telefono = document.getElementById('ws-telefono').value;
+    var email = document.getElementById('ws-email').value;
+    var message = document.getElementById('ws-message').value || 'Sin detalles adicionales';
+
+    var phone = '51982212167';
+
+    var text = '*NUEVA SOLICITUD DE COTIZACIÓN - LONORATA SOCIETÀ*' + '%0A%0A' +
+               '*Razón Social:* ' + encodeURIComponent(name) + '%0A' +
+               '*RUC:* ' + encodeURIComponent(ruc) + '%0A' +
+               '*Servicio:* ' + encodeURIComponent(producto) + '%0A' +
+               '*Teléfono:* ' + encodeURIComponent(telefono) + '%0A' +
+               '*Correo:* ' + encodeURIComponent(email) + '%0A' +
+               '*Detalles:* ' + encodeURIComponent(message);
+
+    var whatsappUrl = 'https://api.whatsapp.com/send?phone=' + phone + '&text=' + text;
+    window.open(whatsappUrl, '_blank');
+});
+</script>
 
 </body>
 </html>
