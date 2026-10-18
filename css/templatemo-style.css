@@ -108,9 +108,9 @@ section {
 }
 
 .brand-logo {
-  height: 70px !important;
+  height: 80px !important;
   width: auto !important;
-  max-width: 80px !important;
+  max-width: 100px !important;
   object-fit: contain !important;
   vertical-align: middle !important;
   flex-shrink: 0 !important;
