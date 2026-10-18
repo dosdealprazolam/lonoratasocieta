@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 /* =========================================
-   SISTEMA DE VARIABLES (TEMA CLARO POR DEFECTO / MODO NOCHE)
+   SISTEMA DE VARIABLES (MODO CLARO Y NOCHE)
    ========================================= */
 :root {
   --bg-body: #FFFFFF;
@@ -18,7 +18,6 @@
   --card-shadow: rgba(0,0,0,0.08);
 }
 
-/* Modo Noche (Activado por defecto mediante la clase .night-mode en la etiqueta html) */
 html.night-mode {
   --bg-body: #0b0f19;
   --bg-section: #0f172a;
@@ -48,15 +47,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary);
 }
 
-h1 {
-  font-size: 2.8em;
-  letter-spacing: -0.5px;
-}
-
-h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
+h1 { font-size: 2.8em; letter-spacing: -0.5px; }
+h2 { font-size: 2em; margin-bottom: 10px; }
 
 p {
   color: var(--text-body);
@@ -92,7 +84,7 @@ section {
   margin-top: 0;
 }
 
-/* NAVBAR */
+/* NAVBAR Y LOGOTIPO */
 .custom-navbar {
   background: var(--bg-navbar) !important;
   border: none;
@@ -101,15 +93,34 @@ section {
   transition: background 0.3s ease;
 }
 
-.custom-navbar .navbar-brand {
+.navbar-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
   color: #FFFFFF !important;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
-.custom-navbar .navbar-brand span {
+.navbar-brand span {
   color: var(--accent-color);
+}
+
+.brand-logo {
+  height: 42px !important;
+  width: auto !important;
+  max-width: 60px !important;
+  object-fit: contain !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 767px) {
+  .brand-logo {
+    height: 34px !important;
+    max-width: 48px !important;
+  }
 }
 
 .custom-navbar .nav li a {
@@ -125,7 +136,7 @@ section {
   background: transparent !important;
 }
 
-/* BUTTONS */
+/* BOTONES GENERALES */
 .section-btn {
   background: var(--accent-color);
   color: #FFFFFF !important;
@@ -141,7 +152,18 @@ section {
   background: var(--accent-hover);
 }
 
-/* SLIDER / HERO */
+.btn-outline-hero {
+  background: transparent !important;
+  border: 2px solid #fff !important;
+  color: #fff !important;
+}
+
+.btn-outline-hero:hover {
+  background: #fff !important;
+  color: #1A2B4C !important;
+}
+
+/* SLIDER */
 #home {
   padding: 0;
   background: #1A2B4C;
@@ -181,78 +203,128 @@ section {
   margin-bottom: 25px;
 }
 
-/* SERVICIOS / PRODUCTOS */
+/* SERVICIOS / DESPLEGABLES CON HOVER */
 #menu {
   background: var(--bg-body);
 }
 
 .service-card {
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+  border-radius: 8px;
   background: var(--bg-service);
   border: 1px solid var(--border-color);
-  border-radius: 6px;
-  padding: 30px;
   margin-bottom: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px var(--card-shadow);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
   border-color: var(--accent-color);
 }
 
-.service-card h3 {
-  font-size: 1.3em;
-  margin-bottom: 12px;
-  color: var(--text-primary);
+.service-card .card-front {
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* STAFF */
-.team-thumb {
-  position: relative;
-  overflow: hidden;
-  border-radius: 6px;
+.service-card:hover .card-front {
+  opacity: 0;
+  transform: translateY(-100%);
 }
 
-.team-thumb img {
-  width: 100%;
+.service-card .card-back {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 2;
 }
 
-.team-thumb .team-hover {
+.service-card .card-back::before {
+  content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(26, 43, 76, 0.85);
+  background: rgba(15, 23, 42, 0.88);
+  z-index: 1;
+}
+
+.service-card:hover .card-back {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card .card-back-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-card .card-back h3 {
+  color: #FFFFFF !important;
+  font-size: 1.4em;
+  margin-bottom: 8px;
+}
+
+.service-card .card-back p {
+  color: #E2E8F0 !important;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.service-card .card-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  justify-content: flex-start;
+  margin-top: 15px;
 }
 
-.team-thumb:hover .team-hover {
-  opacity: 1;
+.service-card .btn-cotizar-card {
+  background: var(--accent-color);
+  color: #FFF !important;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
 }
 
-.team-info {
-  text-align: center;
-  padding: 15px 0;
+.service-card .btn-cotizar-card:hover {
+  background: var(--accent-hover);
 }
 
-.team-info h3 {
-  font-size: 1.2em;
-  margin-bottom: 5px;
-  color: var(--text-primary);
-}
-
-.team-info p {
-  font-size: 13px;
-  color: var(--accent-color);
-  font-weight: 600;
-}
-
-/* CONTACTO */
+/* MAPA Y CONTACTO */
 #contact {
   background: var(--bg-section);
+}
+
+#google-map {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+#google-map iframe {
+  width: 100% !important;
+  max-width: 100%;
 }
 
 #contact .form-control {
@@ -308,82 +380,87 @@ footer p {
   font-size: 14px;
 }
 
-/* LOGOTIPO JUNTO AL NOMBRE (MÁS GRANDE Y PEGADO) */
-.navbar-brand {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 0px !important;
-}
-
-.brand-logo {
-    height: 56px !important;
-    width: auto !important;
-    max-width: 80px !important;
-    object-fit: contain !important;
-    vertical-align: middle !important;
-    margin-right: -4px !important;
-    flex-shrink: 0 !important;
-}
-
-@media (max-width: 767px) {
-    .brand-logo {
-         height: 40px !important;
-         max-width: 60px !important;
-    }
-}
-
-/* BOTÓN FLOTANTE DE WHATSAPP */
+/* BOTONES FLOTANTES */
 .whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25d366;
-    color: #FFF !important;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 32px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: #FFF !important;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .whatsapp-float:hover {
-    background-color: #128c7e;
-    transform: scale(1.1);
-    color: #FFF !important;
+  background-color: #128c7e;
+  transform: scale(1.1);
+  color: #FFF !important;
 }
 
-.whatsapp-icon {
-    margin-top: 0;
+.scroll-top-btn {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-color);
+  color: #FFF !important;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 22px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  border: none;
 }
 
-/* BOTÓN FLOTANTE CAMBIADOR DE TEMA */
+.scroll-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top-btn:hover {
+  transform: translateX(-50%) scale(1.1);
+  background-color: var(--accent-hover);
+}
+
 .theme-toggle-btn {
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    bottom: 95px;
-    right: 30px;
-    background-color: var(--bg-service);
-    color: var(--text-primary);
-    border-radius: 50%;
-    border: 2px solid var(--border-color);
-    text-align: center;
-    font-size: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  bottom: 90px;
+  right: 25px;
+  background-color: var(--bg-service);
+  color: var(--text-primary);
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  text-align: center;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .theme-toggle-btn:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }

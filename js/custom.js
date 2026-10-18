@@ -1,117 +1,125 @@
 (function ($) {
+"use strict";
 
-  "use strict";
+  // PRE LOADER
+  $(window).load(function(){
+    $('.preloader').fadeOut(1000);    
+  });
 
-    // PRE LOADER
-    $(window).load(function(){
-      $('.preloader').fadeOut(1000); // set duration in brackets    
-    });
+  // MENU COLLAPSE
+  $('.navbar-collapse a').on('click',function(){
+    $(".navbar-collapse").collapse('hide');
+  });
 
+  $(window).scroll(function() {
+    if ($(".navbar").offset().top > 50) {
+      $(".navbar-fixed-top").addClass("top-nav-collapse");
+    } else {
+      $(".navbar-fixed-top").removeClass("top-nav-collapse");
+    }
+  });
 
-    // MENU
-    $('.navbar-collapse a').on('click',function(){
-      $(".navbar-collapse").collapse('hide');
-    });
+  // SLIDER (OWL CAROUSEL)
+  $('.owl-carousel').owlCarousel({
+    animateOut: 'fadeOut',
+    items:1,
+    loop:true,
+    autoplayHoverPause: false,
+    autoplay: true,
+    smartSpeed: 1000,
+  });
 
-    $(window).scroll(function() {
-      if ($(".navbar").offset().top > 50) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
-          } else {
-            $(".navbar-fixed-top").removeClass("top-nav-collapse");
-          }
-    });
+  // PARALLAX EFFECT
+  $.stellar({
+    horizontalScrolling: false,
+  }); 
 
-
-    // SLIDER
-    $('.owl-carousel').owlCarousel({
-      animateOut: 'fadeOut',
-      items:1,
-      loop:true,
-      autoplayHoverPause: false,
-      autoplay: true,
-      smartSpeed: 1000,
-    })
-
-
-    // PARALLAX EFFECT
-    $.stellar({
-      horizontalScrolling: false,
-    }); 
-
-
-    // MAGNIFIC POPUP
-    $('.image-popup').magnificPopup({
-        type: 'image',
-        removalDelay: 300,
-        mainClass: 'mfp-with-zoom',
-        gallery:{
-          enabled:true
-        },
-        zoom: {
-        enabled: true, // By default it's false, so don't forget to enable it
-
-        duration: 300, // duration of the effect, in milliseconds
-        easing: 'ease-in-out', // CSS transition easing function
-
-        // The "opener" function should return the element from which popup will be zoomed in
-        // and to which popup will be scaled down
-        // By defailt it looks for an image tag:
-        opener: function(openerElement) {
-        // openerElement is the element on which popup was initialized, in this case its <a> tag
-        // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+  // MAGNIFIC POPUP
+  $('.image-popup').magnificPopup({
+      type: 'image',
+      removalDelay: 300,
+      mainClass: 'mfp-with-zoom',
+      gallery:{
+        enabled:true
+      },
+      zoom: {
+      enabled: true,
+      duration: 300,
+      easing: 'ease-in-out',
+      opener: function(openerElement) {
         return openerElement.is('img') ? openerElement : openerElement.find('img');
-        }
       }
-    });  
-
-/*
-    // CONTACT FORM
-    $("#contact-form").submit(function (e) {
-      e.preventDefault();
-      var name = $("#cf-name").val();
-      var email = $("#cf-email").val();
-      var subject = $("#cf-subject").val();
-      var message = $("#cf-message").val();
-      var dataString = 'name=' + name + '&email=' + email + '&subject=' + subject + '&message=' + message;
-
-      function isValidEmail(emailAddress) {
-          var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
-          return pattern.test(emailAddress);
-      };
-      if (isValidEmail(email) && (message.length > 1) && (name.length > 1)) {
-          $.ajax({
-              type: "POST",
-              url: "email.php",
-              data: dataString,
-              success: function () {
-                  $('.text-success').fadeIn(1000);
-                  $('.text-danger').fadeOut(500);
-              }
-          });
-      }
-      else {
-          $('.text-danger').fadeIn(1000);
-          $('.text-success').fadeOut(500);
-      }
-      return false;
-    });
-
-*/
-
-
-    // SMOOTHSCROLL
-    $(function() {
-      $('.custom-navbar a, #home a').on('click', function(event) {
-        var $anchor = $(this);
-          $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top - 49
-          }, 1000);
-            event.preventDefault();
-      });
-    });  
-
-
-    // WOW ANIMATION
-    new WOW({ mobile: false }).init();
+    }
+  });  
 
 })(jQuery);
+
+/* =========================================
+   FUNCIONES PERSONALIZADAS
+   ========================================= */
+
+// 1. Cambiador de Tema (Modo Oscuro / Claro)
+document.addEventListener('DOMContentLoaded', function() {
+    const themeBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlTag = document.documentElement;
+
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            htmlTag.classList.toggle('night-mode');
+            if (htmlTag.classList.contains('night-mode')) {
+                themeIcon.className = 'fa fa-sun-o'; 
+            } else {
+                themeIcon.className = 'fa fa-moon-o'; 
+            }
+        });
+    }
+
+    // 2. Mostrar/Ocultar y Acción del Botón Volver Arriba
+    const topBtn = document.getElementById('scrollToTopBtn');
+    if (topBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                topBtn.classList.add('show');
+            } else {
+                topBtn.classList.remove('show');
+            }
+        });
+
+        topBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // 3. Formulario de Cotización enviado a WhatsApp
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var name = document.getElementById('ws-name').value;
+            var ruc = document.getElementById('ws-ruc').value || 'No especificado';
+            var producto = document.getElementById('ws-producto').value;
+            var telefono = document.getElementById('ws-telefono').value;
+            var email = document.getElementById('ws-email').value;
+            var message = document.getElementById('ws-message').value || 'Sin detalles adicionales';
+
+            var phone = '51982212167';
+
+            var text = '*NUEVA SOLICITUD DE COTIZACIÓN - LONORATA SOCIETÀ*' + '%0A%0A' +
+                       '*Razón Social:* ' + encodeURIComponent(name) + '%0A' +
+                       '*RUC:* ' + encodeURIComponent(ruc) + '%0A' +
+                       '*Servicio:* ' + encodeURIComponent(producto) + '%0A' +
+                       '*Teléfono:* ' + encodeURIComponent(telefono) + '%0A' +
+                       '*Correo:* ' + encodeURIComponent(email) + '%0A' +
+                       '*Detalles:* ' + encodeURIComponent(message);
+
+            var whatsappUrl = 'https://api.whatsapp.com/send?phone=' + phone + '&text=' + text;
+            window.open(whatsappUrl, '_blank');
+        });
+    }
+});
