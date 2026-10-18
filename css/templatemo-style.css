@@ -203,6 +203,14 @@ section {
   margin-bottom: 25px;
 }
 
+/* SECCIÓN ABOUT / NOSOTROS CON IMAGEN REPARADA */
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
 /* SERVICIOS / DESPLEGABLES CON HOVER */
 #menu {
   background: var(--bg-body);
