@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 /* =========================================
-   SISTEMA DE VARIABLES (MODO CLARO Y NOCHE)
+   SISTEMA DE VARIABLES (MODO CLARO MÁS IMPACTANTE Y VISTOSO)
    ========================================= */
 :root {
-  --bg-body: #FFFFFF;
-  --bg-section: #FFFFFF;
-  --bg-service: #FFFFFF;
-  --bg-navbar: #1A2B4C;
-  --bg-footer: #1A2B4C;
-  --text-primary: #1A2B4C;
-  --text-body: #545454;
-  --text-footer: #E2E8F0;
-  --border-color: #E2E8F0;
-  --accent-color: #FF6B4A;
-  --accent-hover: #E05536;
-  --card-shadow: rgba(0,0,0,0.08);
+  --bg-body: #F4F6F9;              /* Fondo general ligeramente gris claro moderno y limpio */
+  --bg-section: #FFFFFF;           /* Secciones en blanco puro para resaltar */
+  --bg-service: #FFFFFF;           /* Tarjetas en blanco nítido */
+  --bg-navbar: #0F1E36;            /* Azul marino corporativo profundo y elegante */
+  --bg-footer: #0F1E36;            /* Footer armónico */
+  --text-primary: #0B132B;         /* Títulos oscuros con máxima definición */
+  --text-body: #495057;            /* Textos de párrafos con gran legibilidad */
+  --text-footer: #CED4DA;          /* Textos claros en footer */
+  --border-color: #DDE2E6;         /* Bordes definidos */
+  --accent-color: #FF1E00;         /* ROJO SÚPER VISTOSO, VIBRANTE E IMPACTANTE */
+  --accent-hover: #D91A00;         /* Rojo intenso para estados hover */
+  --card-shadow: rgba(15, 30, 54, 0.12); /* Sombra elegante para profundidad */
 }
 
 html.night-mode {
@@ -28,8 +28,8 @@ html.night-mode {
   --text-body: #94a3b8;
   --text-footer: #94a3b8;
   --border-color: #334155;
-  --accent-color: #3b82f6;
-  --accent-hover: #2563eb;
+  --accent-color: #FF3B30;
+  --accent-hover: #E03229;
   --card-shadow: rgba(0,0,0,0.4);
 }
 
@@ -69,6 +69,7 @@ a:hover {
 section {
   padding: 80px 0;
   background: var(--bg-section);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
   transition: background 0.3s ease;
 }
 
@@ -81,6 +82,7 @@ section {
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
+  font-weight: 700;
   margin-top: 0;
 }
 
@@ -89,7 +91,7 @@ section {
   background: var(--bg-navbar) !important;
   border: none;
   padding: 15px 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   transition: background 0.3s ease;
 }
 
@@ -140,33 +142,37 @@ section {
 .section-btn {
   background: var(--accent-color);
   color: #FFFFFF !important;
-  border-radius: 4px;
+  border-radius: 6px;
   border: none;
-  font-weight: 600;
-  padding: 12px 26px;
-  transition: background 0.3s ease;
+  font-weight: 700;
+  padding: 12px 28px;
+  box-shadow: 0 4px 15px rgba(255, 30, 0, 0.3);
+  transition: all 0.3s ease;
   display: inline-block;
 }
 
 .section-btn:hover {
   background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 30, 0, 0.4);
 }
 
 .btn-outline-hero {
   background: transparent !important;
   border: 2px solid #fff !important;
   color: #fff !important;
+  box-shadow: none !important;
 }
 
 .btn-outline-hero:hover {
   background: #fff !important;
-  color: #1A2B4C !important;
+  color: #0F1E36 !important;
 }
 
 /* SLIDER */
 #home {
   padding: 0;
-  background: #1A2B4C;
+  background: #0F1E36;
 }
 
 .slider .item {
@@ -181,7 +187,7 @@ section {
 
 .slider .caption {
   height: 100%;
-  background: rgba(26, 43, 76, 0.75);
+  background: rgba(15, 30, 54, 0.78);
   display: flex;
   align-items: center;
 }
@@ -191,6 +197,7 @@ section {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-weight: 700;
 }
 
 .slider .caption h1 {
@@ -203,7 +210,7 @@ section {
   margin-bottom: 25px;
 }
 
-/* SERVICIOS / DESPLEGABLES CON HOVER */
+/* SERVICIOS / TARJETAS */
 #menu {
   background: var(--bg-body);
 }
@@ -212,16 +219,18 @@ section {
   position: relative;
   overflow: hidden;
   height: 280px;
-  border-radius: 8px;
+  border-radius: 10px;
   background: var(--bg-service);
   border: 1px solid var(--border-color);
   margin-bottom: 30px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 15px var(--card-shadow);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(15, 30, 54, 0.15);
   border-color: var(--accent-color);
 }
 
@@ -259,7 +268,7 @@ section {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(15, 23, 42, 0.88);
+  background: rgba(15, 30, 54, 0.9);
   z-index: 1;
 }
 
@@ -299,16 +308,113 @@ section {
 .service-card .btn-cotizar-card {
   background: var(--accent-color);
   color: #FFF !important;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 9px 18px;
+  border-radius: 6px;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
+  box-shadow: 0 3px 10px rgba(255, 30, 0, 0.3);
   transition: background 0.3s ease;
 }
 
 .service-card .btn-cotizar-card:hover {
   background: var(--accent-hover);
+}
+
+/* =========================================
+   ESTILOS DE LA VENTANA MODAL 
+   ========================================= */
+.service-modal {
+  display: none;
+  position: fixed;
+  z-index: 100000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 30, 54, 0.82);
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.service-modal.active {
+  display: flex;
+}
+
+.service-modal-content {
+  background: var(--bg-service);
+  border: 2px solid var(--accent-color);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 950px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(15, 30, 54, 0.3);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: var(--text-primary);
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s;
+}
+
+.close-modal:hover {
+  color: var(--accent-color);
+}
+
+.service-modal-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal-image-container {
+  flex: 1 1 420px;
+  min-height: 320px;
+  max-height: 500px;
+  overflow: hidden;
+  background: #000;
+}
+
+.modal-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-info-container {
+  flex: 1 1 380px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-info-container h2 {
+  color: var(--text-primary);
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.modal-info-container p {
+  color: var(--text-body);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 30px;
 }
 
 /* MAPA Y CONTACTO */
@@ -320,6 +426,8 @@ section {
   width: 100%;
   overflow: hidden;
   margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px var(--card-shadow);
 }
 
 #google-map iframe {
@@ -330,7 +438,7 @@ section {
 #contact .form-control {
   background: var(--bg-service);
   border: 1px solid var(--border-color);
-  border-radius: 4px;
+  border-radius: 6px;
   height: 48px;
   margin-bottom: 15px;
   box-shadow: none;
@@ -338,7 +446,7 @@ section {
 }
 
 #contact .form-control::placeholder {
-  color: var(--text-body);
+  color: #8C98A4;
 }
 
 #contact textarea.form-control {
@@ -347,6 +455,7 @@ section {
 
 #contact .form-control:focus {
   border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(255, 30, 0, 0.1);
 }
 
 #contact button#cf-submit {
@@ -355,6 +464,9 @@ section {
   font-weight: 700;
   border: none;
   height: 50px;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(255, 30, 0, 0.3);
+  transition: background 0.3s ease;
 }
 
 #contact button#cf-submit:hover {
@@ -392,7 +504,7 @@ footer p {
   border-radius: 50px;
   text-align: center;
   font-size: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -418,7 +530,7 @@ footer p {
   border-radius: 50px;
   text-align: center;
   font-size: 22px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 15px rgba(255, 30, 0, 0.35);
   z-index: 9998;
   display: flex;
   align-items: center;
@@ -452,7 +564,7 @@ footer p {
   border: 2px solid var(--border-color);
   text-align: center;
   font-size: 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(15, 30, 54, 0.15);
   z-index: 9998;
   display: flex;
   align-items: center;
@@ -464,7 +576,7 @@ footer p {
 .theme-toggle-btn:hover {
   transform: scale(1.1);
 }
-/* Espaciado entre los botones del banner principal */
+
 .slider .caption .section-btn {
   margin-right: 15px;
   margin-bottom: 10px;

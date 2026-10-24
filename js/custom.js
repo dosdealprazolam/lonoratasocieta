@@ -58,7 +58,7 @@
    FUNCIONES PERSONALIZADAS
    ========================================= */
 
-// 1. Cambiador de Tema (Modo Oscuro / Claro)
+// 1. Cambiador de Tema (Modo Claro / Noche)
 document.addEventListener('DOMContentLoaded', function() {
     const themeBtn = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
@@ -123,3 +123,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+/* =========================================
+   CONTROL DE VENTANAS MODAL (SERVICIOS Y CONTACTO)
+   ========================================= */
+
+// Modal de Servicios Ampliados
+function abrirServicio(titulo, descripcion, imagenUrl, telefono) {
+  document.getElementById('modal-title').innerText = titulo;
+  document.getElementById('modal-description').innerText = descripcion;
+  document.getElementById('modal-img').src = imagenUrl;
+  
+  var mensajeWsp = encodeURIComponent("Hola, deseo más información y cotizar el servicio de " + titulo);
+  document.getElementById('modal-wsp').href = "https://wa.me/" + telefono + "?text=" + mensajeWsp;
+  
+  document.getElementById('service-modal').classList.add('active');
+  document.body.style.overflow = 'hidden'; 
+}
+
+function cerrarModalServicio(e) {
+  if (e.target.id === 'service-modal') {
+    cerrarModalServicioForce();
+  }
+}
+
+function cerrarModalServicioForce() {
+  document.getElementById('service-modal').classList.remove('active');
+  document.body.style.overflow = 'auto'; 
+}
+
+// Modal de Información de Contacto
+function abrirModalContacto() {
+  document.getElementById('contacto-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarModalContactoClick(e) {
+  if (e.target.id === 'contacto-modal') {
+    cerrarModalContactoForce();
+  }
+}
+
+function cerrarModalContactoForce() {
+  document.getElementById('contacto-modal').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
