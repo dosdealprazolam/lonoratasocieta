@@ -581,8 +581,11 @@ footer p {
   margin-right: 15px;
   margin-bottom: 10px;
 }
+
+/* =========================================
+   ADAPTACIÓN RESPONSIVE PARA MÓVILES (SOLO TAMAÑO Y TARJETAS)
+   ========================================= */
 @media (max-width: 767px) {
-    /* 1. Ajustar la altura del slider en móviles para que no ocupe demasiado */
     .slider .item {
         height: 420px !important;
     }
@@ -601,7 +604,6 @@ footer p {
         margin-bottom: 15px;
     }
 
-    /* 2. Adaptar las tarjetas de servicios (quitar el efecto hover complejo y mostrarlas estables) */
     .service-card {
         height: auto !important;
         min-height: auto !important;
@@ -609,7 +611,6 @@ footer p {
         margin-bottom: 20px;
     }
 
-    /* Desactivar el efecto de ocultar/mostrar de escritorio en móvil */
     .service-card .card-front {
         opacity: 1 !important;
         transform: none !important;
