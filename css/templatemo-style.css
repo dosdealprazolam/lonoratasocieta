@@ -581,3 +581,127 @@ footer p {
   margin-right: 15px;
   margin-bottom: 10px;
 }
+@media (max-width: 767px) {
+    /* 1. Ajustar la altura del slider en móviles para que no ocupe demasiado */
+    .slider .item {
+        height: 420px !important;
+    }
+
+    .slider .caption {
+        padding: 20px;
+    }
+
+    .slider h1 {
+        font-size: 1.8em !important;
+        line-height: 1.2;
+    }
+
+    .slider p {
+        font-size: 13px !important;
+        margin-bottom: 15px;
+    }
+
+    /* 2. Adaptar las tarjetas de servicios (quitar el efecto hover complejo y mostrarlas estables) */
+    .service-card {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 25px 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Desactivar el efecto de ocultar/mostrar de escritorio en móvil */
+    .service-card .card-front {
+        opacity: 1 !important;
+        transform: none !important;
+        padding: 0 !important;
+        height: auto !important;
+    }
+
+    .service-card .card-back {
+        position: relative !important;
+        opacity: 1 !important;
+        transform: none !important;
+        background: transparent !important;
+        padding: 0 !important;
+        margin-top: 15px;
+        height: auto !important;
+    }
+
+    .service-card .card-back::before {
+        display: none !important;
+    }
+
+    .service-card .card-back h3 {
+        font-size: 1.2em !important;
+        color: var(--text-primary) !important;
+    }
+
+    .service-card .card-back p {
+        color: var(--text-body) !important;
+        font-size: 13px !important;
+    }
+}
+
+/* =========================================
+   ADAPTACIÓN RESPONSIVE PARA TELÉFONOS (MÓVIL)
+   ========================================= */
+@media (max-width: 767px) {
+    /* 1. Ajustar la altura del slider en celulares para que no ocupe toda la pantalla */
+    .slider .item {
+        height: 420px !important;
+    }
+
+    .slider .caption {
+        padding: 20px;
+    }
+
+    .slider h1 {
+        font-size: 1.8em !important;
+        line-height: 1.2;
+    }
+
+    .slider p {
+        font-size: 13px !important;
+        margin-bottom: 15px;
+    }
+
+    /* 2. Adaptar las tarjetas de servicios (quitar el efecto hover complejo y mostrarlas estables) */
+    .service-card {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 25px 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Desactivar el efecto de ocultar/mostrar de escritorio en móvil */
+    .service-card .card-front {
+        opacity: 1 !important;
+        transform: none !important;
+        padding: 0 !important;
+        height: auto !important;
+    }
+
+    .service-card .card-back {
+        position: relative !important;
+        opacity: 1 !important;
+        transform: none !important;
+        background: transparent !important;
+        padding: 0 !important;
+        margin-top: 15px;
+        height: auto !important;
+    }
+
+    .service-card .card-back::before {
+        display: none !important;
+    }
+
+    .service-card .card-back h3 {
+        font-size: 1.2em !important;
+        color: var(--text-primary) !important;
+    }
+
+    .service-card .card-back p {
+        color: var(--text-body) !important;
+        font-size: 13px !important;
+    }
+}
