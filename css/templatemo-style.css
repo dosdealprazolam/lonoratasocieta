@@ -750,3 +750,12 @@ footer#footer {
         margin-bottom: 20px !important;
     }
 }
+/* =========================================
+   CORRECCIÓN DE ESPACIADO SUPERIOR MÓVIL (SLIDER Y NAVBAR)
+   ========================================= */
+@media (max-width: 767px) {
+    /* Empuja el slider hacia abajo para que la barra fija no tape el contenido */
+    #home {
+        margin-top: 75px !important;
+    }
+}
