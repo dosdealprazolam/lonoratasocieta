@@ -4,18 +4,18 @@
    SISTEMA DE VARIABLES (MODO CLARO MÁS IMPACTANTE Y VISTOSO)
    ========================================= */
 :root {
-  --bg-body: #F0F4FF;
+  --bg-body: #F4F2F8;
   --bg-section: #FFFFFF;
   --bg-service: #FFFFFF;
-  --bg-navbar: #0022FF;       /* Azul Klein / Eléctrico puro */
-  --bg-footer: #0022FF;
-  --text-primary: #001188;
-  --text-body: #334466;
-  --text-footer: #00FFCC;
-  --border-color: #C2D1FF;
-  --accent-color: #FF5500;     /* NARANJA POP SÚPER VIVO */
-  --accent-hover: #D64600;
-  --card-shadow: rgba(255, 85, 0, 0.25);
+  --bg-navbar: #1E1233;       /* Violeta oscuro firme */
+  --bg-footer: #1E1233;
+  --text-primary: #1E1233;
+  --text-body: #504466;
+  --text-footer: #00B4D8;
+  --border-color: #D8D2E6;
+  --accent-color: #00B4D8;    /* TURQUESA SÓLIDO VIVO */
+  --accent-hover: #0090B0;
+  --card-shadow: rgba(0, 180, 216, 0.25);
 }
 
 html.night-mode {
@@ -583,66 +583,6 @@ footer p {
 }
 
 /* =========================================
-   ADAPTACIÓN RESPONSIVE PARA MÓVILES (SOLO TAMAÑO Y TARJETAS)
-   ========================================= */
-@media (max-width: 767px) {
-    .slider .item {
-        height: 420px !important;
-    }
-
-    .slider .caption {
-        padding: 20px;
-    }
-
-    .slider h1 {
-        font-size: 1.8em !important;
-        line-height: 1.2;
-    }
-
-    .slider p {
-        font-size: 13px !important;
-        margin-bottom: 15px;
-    }
-
-    .service-card {
-        height: auto !important;
-        min-height: auto !important;
-        padding: 25px 20px;
-        margin-bottom: 20px;
-    }
-
-    .service-card .card-front {
-        opacity: 1 !important;
-        transform: none !important;
-        padding: 0 !important;
-        height: auto !important;
-    }
-
-    .service-card .card-back {
-        position: relative !important;
-        opacity: 1 !important;
-        transform: none !important;
-        background: transparent !important;
-        padding: 0 !important;
-        margin-top: 15px;
-        height: auto !important;
-    }
-
-    .service-card .card-back::before {
-        display: none !important;
-    }
-
-    .service-card .card-back h3 {
-        font-size: 1.2em !important;
-        color: var(--text-primary) !important;
-    }
-
-    .service-card .card-back p {
-        color: var(--text-body) !important;
-        font-size: 13px !important;
-    }
-}
-/* =========================================
    FORZAR COLOR PERSONALIZADO EN BARRA Y FOOTER
    ========================================= */
 .custom-navbar {
@@ -653,4 +593,160 @@ footer p {
 footer#footer {
     background-color: var(--bg-footer) !important;
     background: var(--bg-footer) !important;
+}
+
+/* =========================================
+   ADAPTACIÓN RESPONSIVE PERFECTA PARA MÓVILES
+   ========================================= */
+@media (max-width: 767px) {
+    body, html {
+        overflow-x: hidden !important;
+    }
+
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .slider .item {
+        height: 400px !important;
+    }
+
+    .slider .caption {
+        padding: 15px;
+    }
+
+    .slider h1 {
+        font-size: 1.6em !important;
+        line-height: 1.2;
+    }
+
+    .slider p {
+        font-size: 13px !important;
+        margin-bottom: 12px;
+    }
+
+    .slider .caption .section-btn {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin-right: 0 !important;
+        margin-bottom: 8px !important;
+    }
+
+    .navbar-collapse {
+        background-color: var(--bg-navbar) !important;
+        padding: 15px;
+        border-top: 1px solid var(--border-color);
+    }
+
+   /* --- CORRECCIÓN DE TARJETAS EN MÓVIL CON IMAGEN VISIBLE --- */
+    .service-card {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 0 !important;
+        margin-bottom: 25px !important;
+        display: block !important;
+        background-size: cover !important;
+        background-position: center !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    /* Asignamos la imagen de fondo directamente a cada tarjeta en móvil según su orden */
+    .col-md-4:nth-child(1) .service-card { background-image: url('../images/slider-image1.jpg') !important; }
+    .col-md-4:nth-child(2) .service-card { background-image: url('../images/giganto.png') !important; }
+    .col-md-4:nth-child(3) .service-card { background-image: url('../images/banner.png') !important; }
+    .col-md-4:nth-child(4) .service-card { background-image: url('../images/cajaluminica.png') !important; }
+    .col-md-4:nth-child(5) .service-card { background-image: url('../images/personalizar.png') !important; }
+    .col-md-4:nth-child(6) .service-card { background-image: url('../images/especial.png') !important; }
+
+    /* Capa oscura translúcida sobre la imagen para que el texto se lea perfecto */
+    .service-card::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+        background: rgba(15, 30, 54, 0.85) !important;
+        z-index: 1 !important;
+    }
+
+    .service-card .card-front {
+        display: none !important;
+    }
+
+    .service-card .card-back {
+        position: relative !important;
+        opacity: 1 !important;
+        transform: none !important;
+        background: transparent !important;
+        padding: 22px !important;
+        margin-top: 0 !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        z-index: 2 !important;
+    }
+
+    .service-card .card-back::before {
+        display: none !important;
+    }
+
+    .service-card .card-back h3 {
+        font-size: 1.3em !important;
+        color: #FFFFFF !important;
+        margin-bottom: 10px !important;
+    }
+
+    .service-card .card-back p {
+        color: #E2E8F0 !important;
+        font-size: 14px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .service-card .card-actions {
+        margin-top: 10px !important;
+    }
+
+    .service-card .btn-cotizar-card {
+        display: inline-block !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* --- CORRECCIÓN DEL MODAL EN MÓVILES --- */
+    .service-modal {
+        padding: 10px !important;
+    }
+
+    .service-modal-content {
+        width: 95% !important;
+        max-width: 100% !important;
+        max-height: 90vh !important;
+        margin: auto !important;
+    }
+
+    .service-modal-body {
+        flex-direction: column !important;
+    }
+
+    .modal-image-container {
+        flex: 0 0 200px !important;
+        min-height: 200px !important;
+        max-height: 220px !important;
+    }
+
+    .modal-info-container {
+        padding: 20px !important;
+    }
+
+    .modal-info-container h2 {
+        font-size: 22px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .modal-info-container p {
+        font-size: 14px !important;
+        margin-bottom: 20px !important;
+    }
 }
