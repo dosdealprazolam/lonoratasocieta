@@ -4,18 +4,18 @@
    SISTEMA DE VARIABLES (MODO CLARO MÁS IMPACTANTE Y VISTOSO)
    ========================================= */
 :root {
-  --bg-body: #F4F2F8;
+  --bg-body: #F0F4FF;
   --bg-section: #FFFFFF;
   --bg-service: #FFFFFF;
-  --bg-navbar: #1E1233;       /* Violeta oscuro firme */
-  --bg-footer: #1E1233;
-  --text-primary: #1E1233;
-  --text-body: #504466;
-  --text-footer: #00B4D8;
-  --border-color: #D8D2E6;
-  --accent-color: #00B4D8;    /* TURQUESA SÓLIDO VIVO */
-  --accent-hover: #0090B0;
-  --card-shadow: rgba(0, 180, 216, 0.25);
+  --bg-navbar: #0022FF;       /* Azul Klein / Eléctrico puro */
+  --bg-footer: #0022FF;
+  --text-primary: #001188;
+  --text-body: #334466;
+  --text-footer: #00FFCC;
+  --border-color: #C2D1FF;
+  --accent-color: #FF5500;     /* NARANJA POP SÚPER VIVO */
+  --accent-hover: #D64600;
+  --card-shadow: rgba(255, 85, 0, 0.25);
 }
 
 html.night-mode {
