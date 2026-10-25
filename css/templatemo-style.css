@@ -759,3 +759,29 @@ footer#footer {
         margin-top: 75px !important;
     }
 }
+
+/* =========================================
+   SEPARACIÓN AMPLIADA PARA LA SECCIÓN "SOBRE NOSOTROS"
+   ========================================= */
+@media (min-width: 768px) {
+    /* Usamos flexbox para alinear el contenido y empujar la imagen a la derecha */
+    #about .container .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #about .about-info {
+        padding-right: 50px !important; /* Más respiro a la derecha del texto */
+    }
+
+    #about .about-image {
+        padding-left: 60px !important; /* Separa con fuerza la imagen hacia la derecha */
+        text-align: right;
+    }
+
+    #about .about-image img {
+        max-width: 90% !important; /* Controla el tamaño para que luzca proporcionada */
+        margin-left: auto;
+    }
+}
