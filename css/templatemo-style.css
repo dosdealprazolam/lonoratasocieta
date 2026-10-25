@@ -4,18 +4,18 @@
    SISTEMA DE VARIABLES (MODO CLARO MÁS IMPACTANTE Y VISTOSO)
    ========================================= */
 :root {
-  --bg-body: #F4F6F9;              /* Fondo general ligeramente gris claro moderno y limpio */
-  --bg-section: #FFFFFF;           /* Secciones en blanco puro para resaltar */
-  --bg-service: #FFFFFF;           /* Tarjetas en blanco nítido */
-  --bg-navbar: #0F1E36;            /* Azul marino corporativo profundo y elegante */
-  --bg-footer: #0F1E36;            /* Footer armónico */
-  --text-primary: #0B132B;         /* Títulos oscuros con máxima definición */
-  --text-body: #495057;            /* Textos de párrafos con gran legibilidad */
-  --text-footer: #CED4DA;          /* Textos claros en footer */
-  --border-color: #DDE2E6;         /* Bordes definidos */
-  --accent-color: #FF1E00;         /* ROJO SÚPER VISTOSO, VIBRANTE E IMPACTANTE */
-  --accent-hover: #D91A00;         /* Rojo intenso para estados hover */
-  --card-shadow: rgba(15, 30, 54, 0.12); /* Sombra elegante para profundidad */
+  --bg-body: #F0F4FF;
+  --bg-section: #FFFFFF;
+  --bg-service: #FFFFFF;
+  --bg-navbar: #0022FF;       /* Azul Klein / Eléctrico puro */
+  --bg-footer: #0022FF;
+  --text-primary: #001188;
+  --text-body: #334466;
+  --text-footer: #00FFCC;
+  --border-color: #C2D1FF;
+  --accent-color: #FF5500;     /* NARANJA POP SÚPER VIVO */
+  --accent-hover: #D64600;
+  --card-shadow: rgba(255, 85, 0, 0.25);
 }
 
 html.night-mode {
@@ -641,4 +641,16 @@ footer p {
         color: var(--text-body) !important;
         font-size: 13px !important;
     }
+}
+/* =========================================
+   FORZAR COLOR PERSONALIZADO EN BARRA Y FOOTER
+   ========================================= */
+.custom-navbar {
+    background-color: var(--bg-navbar) !important;
+    background: var(--bg-navbar) !important;
+}
+
+footer#footer {
+    background-color: var(--bg-footer) !important;
+    background: var(--bg-footer) !important;
 }
